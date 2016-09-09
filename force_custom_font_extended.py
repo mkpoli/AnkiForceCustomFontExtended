@@ -30,10 +30,6 @@ CHANGE_UI_FONT = True
 from aqt import mw
 from aqt.qt import *
 
-## DEBUG
-# from anki_debug import print_err
-## DEBUG END
-
 def changeFont():
     QFont.insertSubstitutions(FONT, FONT_SUBTITUTIONS)
     font = QFont(FONT)
@@ -41,18 +37,11 @@ def changeFont():
         QApplication.setFont(font)
     f = QFontInfo(font)
     ws = QWebSettings.globalSettings()
-    # mw.fontHeight = f.pixelSize()
     mw.fontHeight = FONT_HEIGHT
     mw.fontFamily = f.family()
     mw.fontHeightDelta = max(0, mw.fontHeight - 13)
     ws.setFontFamily(QWebSettings.StandardFont, mw.fontFamily)
     ws.setFontSize(QWebSettings.DefaultFontSize, mw.fontHeight)
     mw.reset()
-    ## DEBUG
-    # print_err('Font-fmaily : ' + f.family())
-    # print_err('Font-Subtitutions: ' + ','.join(font.substitutions()))
-    # print_err('f.pixelSize() = %d' % f.pixelSize())
-    # debug()
-    ## DEBUG END
 
 changeFont()
