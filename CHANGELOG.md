@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add option to change font subsitituions.
 - Add option to change font render style.
 
+## [2.4.2] - 2017-08-20
+### Fixed
+- Wrong convert on pixelsize vs pointsize
+
 ## [2.4.1] - 2017-08-20
 ### Fixed
 - Open-source license and declaration.
@@ -37,7 +41,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - onChangeUIFont() called change\_font -> change\_ui\_font.
 - onChangeFont(): first argument of getFont() QFont(QApplication.font()) -> QFont(mw.fontFamily, mw.fontHeightDelta).
-
 
 ## [2.2.0] - 2017-08-16
 ### Added

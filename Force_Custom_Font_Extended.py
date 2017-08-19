@@ -2,8 +2,8 @@
 # Force Custom Font Extended v2.4.1
 #
 # This add-on will allow you to force Anki to use a custom font instead of the default system font by menu options.
-# You can also change font size as well as font subtituitions
-# by editing the constant "substitutions" following code.
+# You can also change font size as well as font substitutions
+# by editing the constant "substitutions" in the following code.
 #
 # - By mkpoli
 # https://github.com/mkpoli
@@ -55,7 +55,7 @@ def save_config(font, font_ui):
         attrib={
             "type": "general",
             "family": font_info.family(),
-            "size": str(font_info.pixelSize())
+            "size": str(font_info.pointSize())
         }
     )
     ui = ET.SubElement(
@@ -63,7 +63,7 @@ def save_config(font, font_ui):
         attrib={
             "type": "menu",
             "family": font_ui_info.family(),
-            "size": str(font_ui_info.pixelSize())
+            "size": str(font_ui_info.pointSize())
         }
     )
     with open(FONT_CONFIG_XML, "w") as xml_file:
